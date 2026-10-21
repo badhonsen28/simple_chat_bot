@@ -1,0 +1,204 @@
+
+/* ---------- Global Styles ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #dbeafe, #f8fafc);
+    color: #1e293b;
+}
+
+/* ---------- Main App ---------- */
+.app {
+    width: 100%;
+    max-width: 900px;
+    height: 85vh;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15);
+}
+
+/* ---------- Header ---------- */
+.app-header {
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+}
+
+.app-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.app-header p {
+    font-size: 14px;
+    color: #dbeafe;
+}
+
+/* ---------- Chat Window ---------- */
+.chat-window {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f8fafc;
+}
+
+/* ---------- Chat Messages ---------- */
+.massage {
+    max-width: 75%;
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    animation: fadeIn 0.3s ease;
+}
+
+.bot {
+    align-self: flex-start;
+    background: #e0ecff;
+    color: #1e3a8a;
+    border-bottom-left-radius: 4px;
+}
+
+.user {
+    align-self: flex-end;
+    background: #2563eb;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+/* ---------- Input Area ---------- */
+.chat-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.chat-input input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.chat-input input::placeholder {
+    color: #94a3b8;
+}
+
+.chat-input input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    background: white;
+}
+
+/* ---------- Send Button ---------- */
+.chat-input button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.chat-input button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.chat-input button:active {
+    transform: scale(0.97);
+}
+
+/* ---------- Scrollbar ---------- */
+.chat-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    .app {
+        height: 100vh;
+        min-height: 0;
+        border-radius: 0;
+    }
+
+    .app-header {
+        padding: 20px;
+    }
+
+    .chat-window {
+        padding: 18px;
+    }
+
+    .massage {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    .chat-input {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .chat-input input {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .chat-input button {
+        padding: 13px 18px;
+        font-size: 14px;
+    }
+}
